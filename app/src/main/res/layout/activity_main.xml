@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<cn.com.chengz.xhengzhome.customview.ViewGroupA
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <cn.com.chengz.xhengzhome.customview.ViewGroupB
+        android:layout_width="800px"
+        android:layout_height="800px"
+        android:layout_centerInParent="true"
+        android:background="@android:color/holo_blue_light">
+
+        <cn.com.chengz.xhengzhome.customview.ViewC
+            android:layout_width="400px"
+            android:layout_height="400px"
+            android:layout_centerInParent="true"
+            android:background="@android:color/black"/>
+    </cn.com.chengz.xhengzhome.customview.ViewGroupB>
+</cn.com.chengz.xhengzhome.customview.ViewGroupA>
