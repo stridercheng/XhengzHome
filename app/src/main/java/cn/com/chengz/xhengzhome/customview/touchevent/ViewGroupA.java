@@ -1,4 +1,4 @@
-package cn.com.chengz.xhengzhome.customview;
+package cn.com.chengz.xhengzhome.customview.touchevent;
 
 import android.content.Context;
 import android.util.AttributeSet;
