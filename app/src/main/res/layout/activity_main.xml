@@ -1,19 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<cn.com.chengz.xhengzhome.customview.touchevent.ViewGroupA
+<cn.com.chengz.xhengzhome.customview.recyclerview.SwipeEditRecyclerView
     xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/list"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <cn.com.chengz.xhengzhome.customview.touchevent.ViewGroupB
-        android:layout_width="800px"
-        android:layout_height="800px"
-        android:layout_centerInParent="true"
-        android:background="@android:color/holo_blue_light">
-
-        <cn.com.chengz.xhengzhome.customview.touchevent.ViewC
-            android:layout_width="400px"
-            android:layout_height="400px"
-            android:layout_centerInParent="true"
-            android:background="@android:color/black"/>
-    </cn.com.chengz.xhengzhome.customview.touchevent.ViewGroupB>
-</cn.com.chengz.xhengzhome.customview.touchevent.ViewGroupA>
+</cn.com.chengz.xhengzhome.customview.recyclerview.SwipeEditRecyclerView>

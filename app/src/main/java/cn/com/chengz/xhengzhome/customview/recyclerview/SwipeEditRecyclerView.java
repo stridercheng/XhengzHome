@@ -20,7 +20,7 @@ public class SwipeEditRecyclerView extends RecyclerView {
     /**
      * RecyclerView的LayoutManager的方向
      */
-    private Orientation orientation = Orientation.HORIZONTAL;
+    private Orientation orientation = Orientation.VERTICAL;
 
     /**
      * 当前滑动的Position
@@ -143,8 +143,8 @@ public class SwipeEditRecyclerView extends RecyclerView {
                 case MotionEvent.ACTION_MOVE:
                     MotionEvent cancelEvent = MotionEvent.obtain(e);
                     cancelEvent.setAction(MotionEvent.ACTION_CANCEL |
-                            e.getAction() << MotionEvent.ACTION_POINTER_INDEX_SHIFT);
-                    onTouchEvent(e);
+                            (e.getAction() << MotionEvent.ACTION_POINTER_INDEX_SHIFT));
+                    onTouchEvent(cancelEvent);
                     if (orientation == Orientation.VERTICAL) {
                         int deltaX = downX - x;
                         downX = x;
@@ -299,7 +299,7 @@ public class SwipeEditRecyclerView extends RecyclerView {
             postInvalidate();
             if (scroller.isFinished()) {
                 if (removeListener == null) {
-
+                    return;
                 }
 
                 itemView.scrollTo(0, 0);
