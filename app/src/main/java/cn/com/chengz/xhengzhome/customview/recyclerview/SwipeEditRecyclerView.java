@@ -68,7 +68,7 @@ public class SwipeEditRecyclerView extends RecyclerView {
     }
 
     private void init(Context context) {
-        //获取屏幕的宽度，默认RecycerView是充满屏幕的，横排时也是。
+        //获取屏幕的宽度，默认RecyclerView是充满屏幕的，横排时也是。
         if (orientation == Orientation.VERTICAL) {
             screenWidth = ((WindowManager) context.getSystemService(Context.WINDOW_SERVICE)).getDefaultDisplay().getWidth();
         } else {
@@ -149,7 +149,7 @@ public class SwipeEditRecyclerView extends RecyclerView {
                         int deltaX = downX - x;
                         downX = x;
 
-                        itemView.scrollBy(0, deltaX);
+                        itemView.scrollBy(deltaX, 0);
                     } else {
                         int deltaY = downY - y;
                         downY = y;
@@ -186,7 +186,7 @@ public class SwipeEditRecyclerView extends RecyclerView {
             removeDirection = RemoveDirection.RIGHT;
             final int delta = (screenWidth + itemView.getScrollY());
 
-            scroller.startScroll(0, itemView.getScrollY(), -delta, 0, Math.abs(delta));
+            scroller.startScroll(0, itemView.getScrollY(), 0, -delta, Math.abs(delta));
             postInvalidate();
         }
     }
@@ -202,13 +202,12 @@ public class SwipeEditRecyclerView extends RecyclerView {
             removeDirection = RemoveDirection.LEFT;
             final int delta = (screenWidth - itemView.getScrollY());
 
-            scroller.startScroll(0, itemView.getScrollY(), delta, 0, Math.abs(delta));
+            scroller.startScroll(0, itemView.getScrollY(), 0, delta, Math.abs(delta));
             postInvalidate();
         }
     }
-
     private void scrollByDistanceX() {
-        //
+
 
         if (orientation == Orientation.VERTICAL) {
             if (itemView.getScrollX() >= screenWidth / 2) {
@@ -234,7 +233,7 @@ public class SwipeEditRecyclerView extends RecyclerView {
     }
 
     public enum RemoveDirection {
-        RIGHT, LEFT;
+        RIGHT, LEFT
     }
 
     private void addVelocityTracker(MotionEvent event) {
